@@ -5,6 +5,10 @@ const port = 3000;
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello, welcome to our server!');
+});
+
 app.post('/submit', (req, res) => {
   const { name, company, job, cellphone } = req.body;
 
