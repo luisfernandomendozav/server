@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello, welcome to our server!');
+  res.send('Hello, welcome to Node Simple Server!');
 });
 
 app.post('/submit', (req, res) => {
@@ -32,3 +32,12 @@ app.post('/submit', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+/* curl -X POST https://ubuntu-s-1vcpu-512mb-10gb-sfo3-01.site/submit \
+  -H "Content-Type: application/json" \
+  -d '{                
+    "name": "John Doe",
+    "company": "Acme Corp",
+    "job": "Software Engineer",
+    "cellphone": "1234567890"
+  }' */
